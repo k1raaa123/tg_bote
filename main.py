@@ -1,12 +1,13 @@
 import telebot
+import inf
 
-bot = telebot.TeleBot('5056881947:AAFwUCuBpIPUoovM0uok5-ptzwmy9kEMpKU')
+bot = telebot.TeleBot(inf.token)
 
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-    if message.text.lower() == 'll':
-        bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
+    if message.text.lower() == 'test':
+        bot.send_message(message.from_user.id, message.from_user.id)
 
 
 if __name__ == '__main__':
